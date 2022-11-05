@@ -177,22 +177,28 @@ list_lecturers = [peter, vasiliy, knows]
 def av_gr_hw_students(students, courses):
     av_gr = []
     for student in students:
-        for key, values in student.average_rating_hw.items():
-            if courses in key:
-                av_gr.append(values)
-    return round(sum(av_gr) / len(av_gr), 2)
+        if courses in student.courses_in_progress:
+            for key, values in student.average_rating_hw.items():
+                if courses in key:
+                    av_gr.append(values)
+            return round(sum(av_gr) / len(av_gr), 2)
+        else:
+            return 'Ошибка'
 
 
 def av_gr_lecturers(lecturers, courses):
     av_gr = []
     for lecturer in lecturers:
-        for key, values in lecturer.average_rating.items():
-            if courses in key:
-                av_gr.append(values)
-    return round(sum(av_gr) / len(av_gr), 2)
+        if courses in lecturer.courses_attached:
+            for key, values in lecturer.average_rating.items():
+                if courses in key:
+                    av_gr.append(values)
+            return round(sum(av_gr) / len(av_gr), 2)
+        else:
+            return 'Ошибка'
 
 
-# print(av_gr_hw_students(list_students, 'Python'))
+print(av_gr_hw_students(list_students, 'Git'))
 # print(av_gr_lecturers(list_lecturers, 'Git'))
 # print(ivan.__dict__)
 # print(balabol.__dict__)
