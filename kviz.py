@@ -198,7 +198,7 @@ def av_gr_lecturers(lecturers, courses):
             return 'Ошибка'
 
 
-print(av_gr_hw_students(list_students, 'Git'))
+# print(av_gr_hw_students(list_students, 'Git'))
 # print(av_gr_lecturers(list_lecturers, 'Git'))
 # print(ivan.__dict__)
 # print(balabol.__dict__)
