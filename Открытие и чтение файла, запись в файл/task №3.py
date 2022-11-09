@@ -1,10 +1,10 @@
 dict_file = {1: '1.txt', 2: '2.txt', 3: '3.txt'}
 
-def reading_files(dict):
+
+def reading_files(dicts):
     general_vocabulary = {}
-    for key, values in dict.items():
+    for key, values in dicts.items():
         with open(values, encoding='utf-8') as file:
-            name_file = values
             list_of_strings = [values]
             number_of_rows = 0
             for line in file:
